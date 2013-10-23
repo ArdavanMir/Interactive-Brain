@@ -1,0 +1,217 @@
+/*This is my fisrt ever serious processing coding, hope it goes all well.*/
+
+///fonts
+PFont font;
+PFont font2;
+PFont font3;
+
+PImage img;
+PShape bg;
+int buttonSize = 50;
+int buttonY;
+
+float buttonX = -300;
+
+int textX;
+int textY;
+
+void setup(){
+  size(1024, 768);
+  smooth();
+  bg = loadShape("bg.svg");
+  img = loadImage("BrainLobes0.png");
+  
+}
+
+void draw(){
+   
+  shape(bg, 0, 0, width, height);
+  image(img, 0, 0, width, height);
+  
+      frontalLobe(buttonX, buttonY);
+      cerebralCortex(buttonX, buttonY);
+      temporalLobe(buttonX, buttonY);
+      Broca(buttonX, buttonY);
+      
+  noStroke();
+  smooth();
+  fill(0);
+  rect(50, 450, -700, 700); 
+  noFill();
+  stroke(255);
+  strokeWeight(1);
+  line(50, 700, 50, 450);
+  
+  cerebralButton(350, 90, buttonSize, buttonSize, 7, 0, 255, 91);
+  frontalButton(150, 250, buttonSize, buttonSize, 7, 255, 110, 0);
+  temporalButton(420, 380, buttonSize, buttonSize, 7, 242, 10, 10);
+  brocaButton(345, 290, buttonSize, buttonSize, 7, 204, 24, 214);
+  
+}
+//////void frontalLobe(float x, int y, int w, int h)
+void frontalLobe(float x, int y){
+  ///font declaration for 
+  fill(255);
+  font = loadFont("MyriadPro-Bold-48.vlw");
+  textFont(font);
+  textSize(40);
+  text("Frontal Lobe", buttonX, textY);
+  
+  font2 = loadFont("MyriadPro-Regular-20.vlw");
+  textFont(font2);
+  textSize(20);
+  text("Concentration", buttonX, textY+25);
+  text("Planning", buttonX, textY+45);
+  text("Judgment", buttonX, textY+65);
+  text("Emotional Expression", buttonX, textY+85);
+  text("Creativity", buttonX, textY+105);
+  text("Inhibition", buttonX, textY+125);
+  
+}
+
+void frontalButton(int x, int y, int w, int h, int b, int r, int g, int b1){
+  if((mouseX>x) && (mouseX< x+w) && (mouseY >y) && (mouseY< y+h) && (mousePressed== true))
+  {
+    img = loadImage("BrainLobes1.png");
+    buttonX = 200;
+    buttonY = 250;
+    textY = 530;
+    } else { 
+    img = loadImage("BrainLobes0.png");
+    textX = -200;
+    textY = -200;}
+  
+  fill(r, g, b1, 200);  
+  rect(x, y, w, h, 7); 
+  noFill();
+  font3 = loadFont("MyriadPro-Semibold-40.vlw");
+  textSize(30);
+  textAlign(CENTER);
+  fill(255);
+  text("Fl", (x+(.5*w)),(y+(0.7*h)));
+  }
+float buttonX2 = -300;
+
+void Broca(float x, int y){
+  ///font declaration for 
+  fill(255);
+  font = loadFont("MyriadPro-Bold-48.vlw");
+  textFont(font);
+  textSize(40);
+  text("Broca's Area", buttonX2, textY);
+  
+  font2 = loadFont("MyriadPro-Regular-20.vlw");
+  textFont(font2);
+  textSize(20);
+  text("Muscles of Speech", buttonX2, textY+25);
+}
+
+void brocaButton(int x, int y, int w, int h, int b, int r, int g, int b1){
+  if((mouseX>x) && (mouseX< x+w) && (mouseY >y) && (mouseY< y+h) && (mousePressed== true))
+  {
+    img = loadImage("BrainLobes8.png");
+    buttonX2 = 210;
+    buttonY = 250;
+    textY = 530;
+    } else {
+    img = loadImage("BrainLobes0.png");
+    buttonSize = 50;
+    textX = -200;
+    textY = -200;}
+
+  fill(r, g, b1, 200);  
+  rect(x, y, w, h, 7); 
+  noFill();
+  font3 = loadFont("MyriadPro-Semibold-40.vlw");
+  textSize(30);
+  textAlign(CENTER);
+  fill(255);
+  text("Ba", (x+(.5*w)),(y+(0.7*h)));
+  
+}
+
+float buttonX1 = -300;
+//////void frontalLobe(float x, int y, int w, int h)
+void cerebralCortex(float x, int y){
+  ///font declaration for 
+  fill(255);
+  font = loadFont("MyriadPro-Bold-48.vlw");
+  textFont(font);
+  textSize(40);
+  text("Cerebral Cortex", buttonX1, textY);
+  
+  font2 = loadFont("MyriadPro-Regular-20.vlw");
+  textFont(font2);
+  textSize(20);
+  text("Eye Movement", buttonX1, textY+25);
+  text("and Orientation", buttonX1, textY+45);
+  
+}
+
+void cerebralButton(int x, int y, int w, int h, int b, int r, int g, int b1){
+  if((mouseX>x) && (mouseX< x+w) && (mouseY >y) && (mouseY< y+h) && (mousePressed== true))
+  {
+    img = loadImage("BrainLobes2.png");
+    buttonX1 = 230;
+    buttonY = 250;
+    textY = 530;
+    } else { 
+    img = loadImage("BrainLobes0.png");
+    textX = -200;
+    textY = -200;}
+  
+  fill(r, g, b1, 200);  
+  rect(x, y, w, h, 7); 
+  noFill();
+  font3 = loadFont("MyriadPro-Semibold-40.vlw");
+  textSize(30);
+  textAlign(CENTER);
+  fill(255);
+  text("Cc", (x+(.5*w)),(y+(0.7*h)));
+  
+}
+float buttonX3 = -300;
+
+void temporalLobe(float x, int y){
+  
+  ///font declaration for 
+  fill(255);
+  font = loadFont("MyriadPro-Bold-48.vlw");
+  textFont(font);
+  textSize(40);
+  text("Temporal Lobe", buttonX3, textY);
+  
+  font2 = loadFont("MyriadPro-Regular-20.vlw");
+  textFont(font2);
+  textSize(20);
+  text("Association Area", buttonX3, textY+25);
+  text("Short-term Memory", buttonX3, textY+45);
+  text("Equilibrium", buttonX3, textY+65);
+  text("Emotion", buttonX3, textY+85);
+}
+
+void temporalButton(int x, int y, int w, int h, int b, int r, int g, int b1){
+  if((mouseX>x) && (mouseX< x+w) && (mouseY >y) && (mouseY< y+h) && (mousePressed== true))
+  {
+    img = loadImage("BrainLobes7.png");
+    buttonX3 = 225;
+    buttonY = 250;
+    textY = 530;
+    } else {
+    img = loadImage("BrainLobes0.png");
+    buttonSize = 50;
+    textX = -200;
+    textY = -200;
+  }
+  
+  fill(r, g, b1, 200);  
+  rect(x, y, w, h, 7); 
+  noFill();
+  font3 = loadFont("MyriadPro-Semibold-40.vlw");
+  textSize(30);
+  textAlign(CENTER);
+  fill(255);
+  text("Tl", (x+(.5*w)),(y+(0.7*h)));
+  
+}
+
